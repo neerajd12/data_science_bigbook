@@ -1,1 +1,10 @@
 
+awscli
+boto3
+py4j
+pandas
+requests
+ipywidgets
+beakerx
+jupyterlab
+jupyterthemes
