@@ -1,1 +1,18 @@
 
+version: '3'
+
+services:
+  ubuntu:
+    container_name: data_science_bigbook
+    build: .
+    volumes:
+      - ${HOME}/.ssh:/root/.ssh
+      - ${HOME}/.aws:/root/.aws
+      - ${HOME}/code:/home/code
+    ports:
+      - "0.0.0.0:8888:8888"
+      - "0.0.0.0:4040:4040"
+      - "0.0.0.0:7077:7077"
+      - "0.0.0.0:8580:8580"
+      - "0.0.0.0:8581:8581"
+    entrypoint: "beakerx --ip=0.0.0.0 --no-browser --allow-root --notebook-dir=/home/code"
